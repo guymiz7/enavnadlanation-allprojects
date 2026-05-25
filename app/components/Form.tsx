@@ -208,7 +208,7 @@ export function Form({ onSubmit }: { onSubmit: (d: LeadData) => void }) {
                 : "border-white/15 bg-transparent text-white/45"
             )}
           >
-            {submitting ? "כמעט שם..." : "לתיאום ייעוץ"}
+            {submitting ? "כמעט שם..." : "שליחה"}
           </motion.button>
         </form>
       </div>

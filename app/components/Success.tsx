@@ -58,9 +58,8 @@ export function Success({ name, project }: { name: string; project: string }) {
           transition={{ duration: 0.7, delay: 0.85 }}
           className="mx-auto mt-5 max-w-[34ch] text-center text-[13.5px] font-light leading-[1.65] text-white/85 text-balance"
         >
-          יועץ מטעם <span className="text-white">ENAV</span> יחזור אליך בהקדם
-          <br />
-          לתיאום ייעוץ אישי על הפרויקט שבחרת.
+          מיד תכנס/י לפגישה עם יועץ מכירות מטעם{" "}
+          <span className="text-white">ENAV</span> לגבי הפרויקט שהתעניינת בו.
         </motion.p>
 
         <motion.div

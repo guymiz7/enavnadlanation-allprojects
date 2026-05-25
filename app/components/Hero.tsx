@@ -44,7 +44,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[68%] bg-gradient-to-t from-navy via-navy/82 to-transparent" />
 
       {/* headlines pinned to the bottom */}
-      <div className="absolute inset-x-0 bottom-0 px-6 pb-10 sm:pb-14">
+      <div className="absolute inset-x-0 bottom-0 px-6 pb-6 sm:pb-10">
         <h1 className="mx-auto max-w-[480px] text-right font-display text-[clamp(2.6rem,12vw,3.7rem)] font-extralight leading-[1.07] tracking-[-0.025em] text-balance">
           <motion.span
             initial={{ opacity: 0, y: 8 }}
@@ -66,8 +66,46 @@ export function Hero() {
           transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto mt-5 max-w-[480px] text-right text-[15px] font-light leading-relaxed text-white/85"
         >
-          מלאו את הפרטים בדרך בית החדש שלכם
+          מלאו פרטים ושוחחו עם יועץ מכירות על הפרויקט שמעניין אתכם
         </motion.p>
+
+        {/* scroll-down indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.9 }}
+          className="mt-7 flex justify-center"
+        >
+          <motion.div
+            animate={{ y: [0, 5, 0], opacity: [0.5, 0.95, 0.5] }}
+            transition={{
+              duration: 1.8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="flex flex-col items-center gap-1"
+          >
+            <span className="text-[10px] font-light uppercase tracking-[0.32em] text-white/70">
+              גלילה
+            </span>
+            <svg
+              width="20"
+              height="12"
+              viewBox="0 0 20 12"
+              fill="none"
+              aria-hidden
+            >
+              <path
+                d="M2 2 L10 9 L18 2"
+                stroke="white"
+                strokeOpacity="0.85"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
