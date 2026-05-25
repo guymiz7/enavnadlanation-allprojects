@@ -27,44 +27,37 @@ export function Hero() {
       {/* soft wash at the top so the logo reads cleanly */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[36%] bg-gradient-to-b from-navy via-navy/65 to-transparent" />
 
-      {/* large ENAV logo — top center */}
-      <div className="absolute inset-x-0 top-12 z-10 flex justify-center">
+      {/* large ENAV logo + tagline — top center */}
+      <div className="absolute inset-x-0 top-12 z-10 flex flex-col items-center">
         <motion.img
           src={asset("/media/logo.png")}
           alt="ENAV"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="h-20 w-auto"
+          className="h-24 w-auto"
           style={{ filter: "brightness(0) invert(1)" }}
         />
+        <motion.p
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-3 text-center text-[13px] font-light tracking-[0.22em] text-white/85"
+        >
+          יוצרים מציאות חדשה
+        </motion.p>
       </div>
 
       {/* dark wash at the bottom for the headlines */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[68%] bg-gradient-to-t from-navy via-navy/82 to-transparent" />
 
-      {/* headlines pinned to the bottom */}
+      {/* headline pinned to the bottom */}
       <div className="absolute inset-x-0 bottom-0 px-6 pb-6 sm:pb-10">
-        <h1 className="mx-auto max-w-[480px] text-right font-display text-[clamp(2.6rem,12vw,3.7rem)] font-extralight leading-[1.07] tracking-[-0.025em] text-balance">
-          <motion.span
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1.5,
-              delay: 0.55,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="block"
-          >
-            קחו את עצמכם הביתה
-          </motion.span>
-        </h1>
-
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mt-5 max-w-[480px] text-right text-[15px] font-light leading-relaxed text-white/85"
+          transition={{ duration: 1.4, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto max-w-[520px] text-center text-[19px] font-light leading-[1.55] text-white text-balance"
         >
           מלאו פרטים ושוחחו עם יועץ מכירות על הפרויקט שמעניין אתכם
         </motion.p>
