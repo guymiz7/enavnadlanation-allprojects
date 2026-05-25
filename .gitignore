@@ -1,0 +1,15 @@
+.env
+.env.local
+node_modules/
+.expo/
+dist/
+build/
+.next/
+out/
+*.log
+.DS_Store
+.claude/
+
+# Oversized reference PDFs (>100MB exceeds GitHub limit)
+reference/images/Enav_Middle_587X287_X1.pdf
+reference/images/Enav_Right_287X287_X1.pdf

@@ -1,0 +1,10 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+  staticPageGenerationTimeout: 300,
+};
+
+export default nextConfig;
