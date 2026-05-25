@@ -14,9 +14,22 @@ export function Hero() {
         style={{ objectPosition: "center center" }}
       />
 
-      {/* subtle dark wash for legibility — top + bottom only */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[28%] bg-gradient-to-b from-navy/55 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-navy via-navy/65 to-transparent" />
+      {/* full-page navy wash so the text is always legible against the photo */}
+      <div className="pointer-events-none absolute inset-0 bg-navy/40" />
+
+      {/* extra washes at the top + bottom edges where the text actually sits */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[34%] bg-gradient-to-b from-navy/70 via-navy/30 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[52%] bg-gradient-to-t from-navy via-navy/75 to-transparent" />
+
+      {/* radial dim behind the centered logo block, just enough to lift it
+          off the sky without darkening the whole frame */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 50% 28% at center 50%, rgba(16,43,75,0.55), transparent 70%)",
+        }}
+      />
 
       {/* ENAV logo + tagline — vertically centered */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
@@ -34,6 +47,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
           className="mt-4 text-center text-[15px] font-light tracking-[0.24em] text-white"
+          style={{ textShadow: "0 1px 12px rgba(16,43,75,0.55)" }}
         >
           יוצרים מציאות חדשה
         </motion.p>
@@ -46,6 +60,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-[520px] text-center text-[19px] font-light leading-[1.55] text-white text-balance"
+          style={{ textShadow: "0 1px 14px rgba(16,43,75,0.7)" }}
         >
           מלאו פרטים ושוחחו עם יועץ מכירות על הפרויקט שמעניין אתכם
         </motion.p>
