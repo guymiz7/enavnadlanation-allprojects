@@ -7,7 +7,7 @@ import { Form, type LeadData } from "./Form";
 import { Success } from "./Success";
 
 const WEBHOOK_URL =
-  "https://hook.eu1.make.com/ngm9nkk854ynqawkqvo8k6ukt14f23t5";
+  "https://hook.eu1.make.com/i8amfccxigy78mdr0oth51fmcp1q8i32";
 
 export function Page() {
   const [success, setSuccess] = useState<{ name: string; project: string } | null>(
