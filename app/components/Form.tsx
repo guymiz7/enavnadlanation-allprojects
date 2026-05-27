@@ -8,7 +8,6 @@ import { LegalSheet } from "./LegalSheet";
 export type LeadData = {
   name: string;
   phone: string;
-  email: string;
   project: string;
   consent: boolean;
 };
@@ -25,7 +24,6 @@ export function Form({ onSubmit }: { onSubmit: (d: LeadData) => void }) {
   const [data, setData] = useState<LeadData>({
     name: "",
     phone: "",
-    email: "",
     project: "",
     consent: true,
   });
@@ -35,18 +33,15 @@ export function Form({ onSubmit }: { onSubmit: (d: LeadData) => void }) {
 
   const nameOk = data.name.trim().length >= 2;
   const phoneOk = data.phone.replace(/\D/g, "").length >= 9;
-  const emailOk =
-    !data.email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email);
   const projectOk = data.project.length > 0;
 
-  const formValid = nameOk && phoneOk && emailOk && projectOk && data.consent;
+  const formValid = nameOk && phoneOk && projectOk && data.consent;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setTouched({
       name: true,
       phone: true,
-      email: true,
       project: true,
       consent: true,
     });
@@ -104,24 +99,6 @@ export function Form({ onSubmit }: { onSubmit: (d: LeadData) => void }) {
           </Field>
 
           <Field
-            label="מייל"
-            optional
-            error={touched.email && !emailOk ? "לא תקין" : undefined}
-          >
-            <input
-              type="email"
-              inputMode="email"
-              autoComplete="email"
-              value={data.email}
-              onChange={(e) => setData({ ...data, email: e.target.value })}
-              onBlur={() => setTouched((t) => ({ ...t, email: true }))}
-              placeholder="—"
-              className="input-line text-right"
-              dir="ltr"
-            />
-          </Field>
-
-          <Field
             label="הפרויקט שמעניין אותי"
             required
             error={touched.project && !projectOk ? "חובה" : undefined}
@@ -163,7 +140,7 @@ export function Form({ onSubmit }: { onSubmit: (d: LeadData) => void }) {
             </div>
           </Field>
 
-          <label className="mt-7 flex items-start gap-3 text-right text-[11px] font-light leading-[1.65] text-white/75">
+          <label className="mt-8 flex items-start gap-3 text-right text-[12.5px] font-light leading-[1.65] text-white/75">
             <input
               type="checkbox"
               checked={data.consent}
@@ -202,7 +179,7 @@ export function Form({ onSubmit }: { onSubmit: (d: LeadData) => void }) {
             disabled={submitting}
             whileTap={{ scale: 0.985 }}
             className={cn(
-              "mt-auto w-full border py-4 text-[15px] font-medium tracking-wide transition",
+              "mt-auto w-full border py-[18px] text-[17px] font-medium tracking-wide transition",
               formValid && !submitting
                 ? "border-white bg-white text-navy"
                 : "border-white/15 bg-transparent text-white/45"
@@ -233,7 +210,7 @@ function Field({
 }) {
   return (
     <div className="!mt-3 first:!mt-0">
-      <div className="mb-1 flex items-baseline justify-between text-[11px] font-light">
+      <div className="mb-1.5 flex items-baseline justify-between text-[12.5px] font-light">
         <span className="text-white/55">
           {label}
           {required && <span className="ms-0.5">*</span>}
