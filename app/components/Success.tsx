@@ -90,13 +90,12 @@ export function Success({
           <motion.button
             type="button"
             onClick={onRestart}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.25 }}
-            whileTap={{ scale: 0.985 }}
-            className="mx-auto mt-8 w-full max-w-[360px] border border-white/40 bg-transparent py-[14px] text-[15px] font-medium tracking-wide text-white transition hover:border-white hover:bg-white/10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.25 }}
+            className="mx-auto mt-7 text-[14px] font-light text-white/85 underline decoration-white/40 underline-offset-[6px] transition hover:text-white hover:decoration-white"
           >
-            התחלה מחדש
+            להרשמה נוספת
           </motion.button>
         )}
 
